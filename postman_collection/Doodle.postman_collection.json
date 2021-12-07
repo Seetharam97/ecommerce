@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "d1ddcb93-72a7-4f74-9d37-861efc3d5c53",
+		"name": "Doodle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"seetha97\",\n    \"name\": \"Seetha P\",\n    \"gender\" : \"male\",\n    \"phone_number\" : \"9003601486\",\n    \"country_code\" : \"91\",\n    \"email\" : \"test1@gmail.com\",\n    \"address\": [{\n        \"door_no\": \"17-6\",\n        \"street\": \"Main road\",\n        \"area\": \"vadapalani\",\n        \"city\": \"Chennai\",\n        \"state\": \"TamilNadu\",\n        \"country\": \"India\",\n        \"pincode\": \"600026\",\n        \"phoneNumber\": \"9003601487\",\n        \"email\": \"test@gmail.com\",\n        \"instructions\": \"\"\n    }],\n    \"password\" : \"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"seetha97\",\n    \"password\": \"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create the order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFlMTQ0NmQ2MzkwOTExNTkxNzgzMjYiLCJ1dWlkIjoiVVNFUi02REVGQzE0QyIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Mzg4ODg3OTd9.7TOQkDHl5Ry0W8yBaK1n5NhuLIgFwUYBzdeeRL5rGs4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_uuid\": \"USER-80BEAF08\",\n    \"products\": [\n        {\n            \"uuid\" : \"PROD-C1E79E2EDD49\",\n            \"product_name\" : \"pen\",\n            \"quantity\": \"10\",\n            \"total_amount\": \"100\",\n            \"product_code\" : \"PR1021\"\n        },\n        {\n            \"uuid\" : \"PROD-ABF1C3104EE8\",\n            \"product_name\" : \"pencil\",\n            \"quantity\": \"5\",\n            \"total_amount\": \"25\",\n            \"product_code\" : \"PR1020\"\n        }\n    ],\n    \"total_amount\": \"100\",\n    \"deliveryAddress\": [{\n        \"door_no\": \"17-6\",\n        \"street\": \"Main road\",\n        \"area\": \"vadapalani\",\n        \"city\": \"Chennai\",\n        \"state\": \"TamilNadu\",\n        \"country\": \"India\",\n        \"pincode\": \"600026\",\n        \"phoneNumber\": \"9003601487\",\n        \"email\": \"test@gmail.com\",\n        \"instructions\": \"\"\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/orders/createOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel the order",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFlMTQ0NmQ2MzkwOTExNTkxNzgzMjYiLCJ1dWlkIjoiVVNFUi02REVGQzE0QyIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Mzg4ODg3OTd9.7TOQkDHl5Ry0W8yBaK1n5NhuLIgFwUYBzdeeRL5rGs4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/orders/cancelOrder/ORDER-5F757FBAF452",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"cancelOrder",
+						"ORDER-5F757FBAF452"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get the ordered product details based on customer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFlMTQ0NmQ2MzkwOTExNTkxNzgzMjYiLCJ1dWlkIjoiVVNFUi02REVGQzE0QyIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Mzg4ODg2MDV9.NR_9LY_B2oKMo5d7l6Myk0cTs8zt4RD7-B7liWG0pwM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/getOrderBasedOnCustomer?search=r&sort=ascen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"getOrderBasedOnCustomer"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "r"
+						},
+						{
+							"key": "sort",
+							"value": "ascen"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Number of product purchased",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFlMTQ0NmQ2MzkwOTExNTkxNzgzMjYiLCJ1dWlkIjoiVVNFUi02REVGQzE0QyIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Mzg4ODg3OTd9.7TOQkDHl5Ry0W8yBaK1n5NhuLIgFwUYBzdeeRL5rGs4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/orders/numberOfProducts?uuid=USER-80BEAF08",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"numberOfProducts"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "USER-80BEAF08"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update the order",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFlMTQ0NmQ2MzkwOTExNTkxNzgzMjYiLCJ1dWlkIjoiVVNFUi02REVGQzE0QyIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Mzg4ODg3OTd9.7TOQkDHl5Ry0W8yBaK1n5NhuLIgFwUYBzdeeRL5rGs4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uuid\": \"ORDER-7A6B9BECA5CA\",\n    \"products\" : [ \n        {\n            \"uuid\" : \"PROD-C1E79E2EDD49\",\n            \"product_name\" : \"pen\",\n            \"quantity\" : \"5\",\n            \"total_amount\" : \"50\",\n            \"product_code\" : \"PR1021\"\n        },\n        {\n            \"uuid\" : \"PROD-9503F98D437A\",\n            \"product_name\" : \"mobile\",\n            \"quantity\" : \"1\",\n            \"total_amount\" : \"10000\",\n            \"product_code\" : \"PR1023\"\n        }\n    ],\n    \"deliveryAddress\" : [ \n        {\n            \"door_no\" : \"17-6-52\",\n            \"street\" : \"Main road\",\n            \"area\" : \"vadapalani\",\n            \"city\" : \"Chennai\",\n            \"state\" : \"TamilNadu\",\n            \"country\" : \"India\",\n            \"pincode\" : \"600026\",\n            \"phoneNumber\" : \"9003601487\",\n            \"email\" : \"test@gmail.com\",\n            \"instructions\" : \"\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/orders/updateOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"updateOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product details upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFlMTQ0NmQ2MzkwOTExNTkxNzgzMjYiLCJ1dWlkIjoiVVNFUi02REVGQzE0QyIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Mzg4OTk4Mzh9.4oRET0nfxwVLu5X-guNj3TeQheMWi3Rj4SsXBH7yGpA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/user/Desktop/doodle/sample.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/products/productUpload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"productUpload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
